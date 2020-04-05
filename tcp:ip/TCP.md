@@ -1,6 +1,6 @@
 ## TCP首部格式
 
-![image-20200331161031089](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331161031089.png)
+![image-20200331161031089](../src/image-20200331161031089.png)
 
 - 源端口号
 
@@ -102,7 +102,7 @@
 
 ​	为每个数据包进行确认应答的缺点是，包的往返时间越长，网络的吞吐量越差
 
-![image-20200331145144076](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331145144076.png)
+![image-20200331145144076](../src/image-20200331145144076.png)
 
 ​	窗口大小是指无需等待确认应答而可以继续发送数据的最大值。（上图窗口为4个段）
 
@@ -114,11 +114,11 @@
 
 ​		当收到确认应答的情况下，将窗口滑动到确认应答中的序列号的位置。这样可以	顺序地将多个段同时发送提高通信性能。这种机制也被称为滑动窗口控制。
 
-![image-20200331152312061](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331152312061.png)
+![image-20200331152312061](../src/image-20200331152312061.png)
 
 ## 窗口控制与重发控制
 
-![image-20200331152833974](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331152833974.png)
+![image-20200331152833974](../src/image-20200331152833974.png)
 
 ## 流控制
 
@@ -126,7 +126,7 @@
 
 ​	不过，接收端的这个缓冲区一旦面临数据溢出时，窗口大小的值也会随之被设置为一个更小的值通知给发送端，从而控制数据发送量。也就是说，发送端主机会根据接收端主机的指示，对发送数据的量进行控制。这也形成了一个完整的TCP控制流程（流量控制）。
 
-![image-20200331153448742](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331153448742.png)
+![image-20200331153448742](../src/image-20200331153448742.png)
 
 ## 拥塞控制
 
@@ -136,9 +136,9 @@
 
 ​	TCP为了防止改问题，在通信一开始时就会通过一个叫慢启动的算法得出数值，对发送数据量进行控制。
 
-![image-20200331154132016](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331154132016.png)
+![image-20200331154132016](../src/image-20200331154132016.png)
 
-![image-20200331154221244](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331154221244.png)
+![image-20200331154221244](../src/image-20200331154221244.png)
 
 ## 提高网络利用率的算法
 
@@ -165,7 +165,7 @@
 这个时间越小、cpu负荷越高，性能也下降。反正这个时间越长，越有可能触发发送主机的重发处理，而窗口只有一个数据段的时候，性能也会下降。
 ```
 
-![image-20200331160241458](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331160241458.png)
+![image-20200331160241458](../src/image-20200331160241458.png)
 
 ### 捎带应答
 
@@ -173,4 +173,5 @@
 
 ​	接收数据以后如果立即返回确认应答，就无法实现捎带应答。而是将所接受的数据传给应用处理生成返回数据以后再进行发送请求为止，必须一直等待确认应答的发送。也就是说，如果没有启动延迟确认应答就无法实现捎带应答。延迟确认应答是能够提高网络利用率从而降低计算机处理负荷的一种较优的处理机制。
 
-![image-20200331160426453](/Users/azmuuuu/Library/Application Support/typora-user-images/image-20200331160426453.png)
+![image-20200331160426453](../src/image-20200331160426453.png)
+
